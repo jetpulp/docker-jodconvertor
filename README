@@ -21,8 +21,6 @@ services:
   libreoffice:
     restart: always
     image: jetpulp/libreoffice:5.3
-    ports:
-      - 8100:8100
     volumes:
       - ./tmp:/app/jodconverter-tomcat-2.2.2/temp/
 ```
