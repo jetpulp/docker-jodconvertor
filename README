@@ -1,4 +1,32 @@
 # Jodconvertor docker container
 
 
+Simple jodconvertor 2.2 container
+
+# Usage with docker compose
+
+```
+version: '2'
+services:
+  jodconvertor:
+    restart: always
+    image: jetpulp/jodconvertor
+    volumes:
+      - ./applicationContext.xml:/app/jodconverter-tomcat-2.2.2/webapps/converter/WEB-INF/applicationContext.xml
+      - ./tmp:/app/jodconverter-tomcat-2.2.2/temp/
+    ports:
+      - 8099:8080
+    links:
+      - libreoffice
+  libreoffice:
+    restart: always
+    image: jetpulp/libreoffice:5.3
+    ports:
+      - 8100:8100
+    volumes:
+      - ./tmp:/app/jodconverter-tomcat-2.2.2/temp/
+```
+
+The applicationContext.xml is note mandatory but can help you to customize the libreoffice IP adresse. You can find an sample file here : https://github.com/jetpulp/docker-jodconvertor/blob/master/applicationContext.xml
+
 
