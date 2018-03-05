@@ -25,6 +25,6 @@ services:
       - ./tmp:/app/jodconverter-tomcat-2.2.2/temp/
 ```
 
-The applicationContext.xml is note mandatory but can help you to customize the libreoffice IP adresse. You can find an sample file here : https://github.com/jetpulp/docker-jodconvertor/blob/master/applicationContext.xml
+The applicationContext.xml is not mandatory but can help you to customize the libreoffice IP adress. You can find a sample file here : https://github.com/jetpulp/docker-jodconvertor/blob/master/applicationContext.xml
 
 
